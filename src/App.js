@@ -1,4 +1,5 @@
 import './App.css';
+import Contact from './components/contacts/Contact';
 
 function App() {
   let name="El mourabit Mohammed";
@@ -12,6 +13,9 @@ return (
   <input type="text" name="name" id="" />
   
   <p>{num1}+{num2}={num1+num2}</p>
+
+  <Contact/>
+  <Contact/>
 </div>
 );
 }
