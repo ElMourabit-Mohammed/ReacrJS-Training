@@ -1,5 +1,6 @@
 import './App.css';
 import Contact from './components/contacts/Contact';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   let name="El mourabit Mohammed";
@@ -7,7 +8,9 @@ function App() {
   let num2=8;
 return (
 <div className="App">
-  <h1>Hello World!</h1>
+  <Navbar/>
+
+  <h5>Hello World!</h5>
 
   <label htmlFor="name">Hello {name}</label>
   <input type="text" name="name" id="" />
