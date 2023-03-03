@@ -6,13 +6,14 @@ import'font-awesome/css/font-awesome.min.css'
 import Contacts from './components/contacts/Contacts';
 
 function App() {
-  let name="El mourabit Mohammed";
-  let num1=12;
-  let num2=8;
+  // let name="El mourabit Mohammed";
+  // let num1=12;
+  // let num2=8;
 return (
 <div className="App">
+  
+  {/* 
   <Navbar/>
-  <Navbar title="Contact List"/>
 
   <h5>Hello World!</h5>
 
@@ -21,13 +22,14 @@ return (
   
   <p>{num1}+{num2}={num1+num2}</p>
 
-  {/*
   <Contact name="El mourabit Mohammed" tel="+212 6 70 36 61 90" email="elmourabitmohammed00@gmail.com"/>
   <Contact name="El mourabit Khalid" tel="+212 6 70 36 61 91" email="Khalid@gmail.com"/>
   <Contact/>
   */}
 
+  <Navbar title="Contact List"/>
   <Contacts/>
+
 </div>
 );
 }

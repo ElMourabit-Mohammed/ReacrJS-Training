@@ -2,6 +2,17 @@ import React, { Component } from 'react'
 import Contact from './Contact'
 
 class Contacts extends Component {
+
+    deleteContact(id){
+        const {contacts} = this.state;
+
+        const newListContacts = contacts.filter((contact) => contact.id !== id)
+
+        this.setState({
+            contacts : newListContacts
+        })
+    }
+
     state = {
         contacts : [
             {id:1 , name:"El mourabit Mohammed" , tel : "+212 6 70 36 61 90" , email :"elmourabitmohammed00@gmail.com"},
@@ -15,7 +26,7 @@ class Contacts extends Component {
     return (
       <div>
         {contacts.map((contact)=>(
-            <Contact data={contact} key={contact.id}/>
+            <Contact data={contact} key={contact.id} deleteContactFromChild={this.deleteContact.bind(this,contact.id)}/>
         ))}
       </div>
     )

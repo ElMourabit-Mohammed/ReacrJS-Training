@@ -16,6 +16,11 @@ class Contact extends Component {
         })
     }
 
+    onDeleteClick = () => {
+        console.log("button delete clicked")
+        this.props.deleteContactFromChild()
+    }
+
   render() {
     const {name , tel , email} = this.props.data
     return (
@@ -25,7 +30,15 @@ class Contact extends Component {
             <div className="card-body">
                 <h4 className="card-title">
                     Contact : {name} 
-                        <i onClick={this.showContact.bind(this,name)} className='fa fa-sort-down'></i>
+                        <i
+                        className='fa fa-sort-down'
+                        style={{cursor:'pointer'}}
+                        onClick={this.showContact.bind(this,name)}>
+                        </i>
+
+                        <i className="fa fa-times"  aria-hidden="true"
+                        style={{color:'red' , float :'right' , cursor:'pointer'}}
+                        onClick={this.onDeleteClick}></i>
                     </h4>
                 <article className="card-text">
                     {(this.state.showContactToggle) ? (
@@ -58,20 +71,21 @@ class Contact extends Component {
 //     email : "xxxx@gmail.com"
 // }
 
-Contact.defaultProps = {
-    name : "Unknown",
-    tel : "+212 6 xx xx xx xx",
-    email : "xxxx@gmail.com"
-}
-
 // Contact.protoTypes = {
 //     name : PropTypes.string,
 //     tel : PropTypes.string,
 //     email :PropTypes.string
 // }
 
+Contact.defaultProps = {
+    name : "Unknown",
+    tel : "+212 6 xx xx xx xx",
+    email : "xxxx@gmail.com"
+}
+
 Contact.protoTypes = {
-    data : PropTypes.object.isRequired
+    data : PropTypes.object.isRequired,
+    deleteContactFromChild : PropTypes.func.isRequired
 }
 
 export default Contact;
