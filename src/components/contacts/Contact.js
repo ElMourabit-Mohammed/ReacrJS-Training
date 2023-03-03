@@ -4,8 +4,16 @@ import './Contact.css'
 
 class Contact extends Component {
 
+    state ={
+        showContactToggle : false
+    }
+
     showContact (message){
         console.log(message)
+        //this.state.showContactToggle = true
+        this.setState({
+            showContactToggle : !this.state.showContactToggle
+        })
     }
 
   render() {
@@ -20,10 +28,12 @@ class Contact extends Component {
                         <i onClick={this.showContact.bind(this,name)} className='fa fa-sort-down'></i>
                     </h4>
                 <article className="card-text">
-                    <ul className="list-group">
+                    {(this.state.showContactToggle) ? (
+                        <ul className="list-group">
                         <li className="list-group-item">Tel : {tel}</li>
                         <li className="list-group-item">Email : {email}</li>
                     </ul>
+                    ) : null}
                 </article>
             </div>
         </div>
