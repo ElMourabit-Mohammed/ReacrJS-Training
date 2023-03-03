@@ -16,8 +16,8 @@ class Contact extends Component {
         })
     }
 
-    onDeleteClick = () => {
-        console.log("button delete clicked")
+    onDeleteClick = (name) => {
+        console.log(name +' is deleted')
         this.props.deleteContactFromChild()
     }
 
@@ -38,15 +38,17 @@ class Contact extends Component {
 
                         <i className="fa fa-times"  aria-hidden="true"
                         style={{color:'red' , float :'right' , cursor:'pointer'}}
-                        onClick={this.onDeleteClick}></i>
+                        onClick={this.onDeleteClick.bind(this,name)}></i>
                     </h4>
                 <article className="card-text">
-                    {(this.state.showContactToggle) ? (
+                    {(this.state.showContactToggle) ?
+                    (
                         <ul className="list-group">
                         <li className="list-group-item">Tel : {tel}</li>
                         <li className="list-group-item">Email : {email}</li>
                     </ul>
-                    ) : null}
+                    )
+                    : null}
                 </article>
             </div>
         </div>
