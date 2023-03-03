@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/navbar/Navbar';
 import Contact from './components/contacts/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import'font-awesome/css/font-awesome.min.css'
 import Contacts from './components/contacts/Contacts';
 
 function App() {

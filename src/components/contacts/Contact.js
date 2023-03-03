@@ -3,6 +3,11 @@ import PropTypes from 'prop-types'
 import './Contact.css'
 
 class Contact extends Component {
+
+    showContact (message){
+        console.log(message)
+    }
+
   render() {
     const {name , tel , email} = this.props.data
     return (
@@ -10,7 +15,10 @@ class Contact extends Component {
 
         <div className="card">
             <div className="card-body">
-                <h4 className="card-title">Contact : {name}</h4>
+                <h4 className="card-title">
+                    Contact : {name} 
+                        <i onClick={this.showContact.bind(this,name)} className='fa fa-sort-down'></i>
+                    </h4>
                 <article className="card-text">
                     <ul className="list-group">
                         <li className="list-group-item">Tel : {tel}</li>
