@@ -1,17 +1,49 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import './Contact.css'
 
 class Contact extends Component {
   render() {
+    const {name , tel , email} = this.props
     return (
       <div>
-        <h1>Contact : El mourabit Mohammed</h1>
+
+        <div className="card">
+            <div className="card-body">
+                <h4 className="card-title">Contact : {name}</h4>
+                <article className="card-text">
+                    <ul className="list-group">
+                        <li className="list-group-item">Tel : {tel}</li>
+                        <li className="list-group-item">Email : {email}</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+
+        {/* 
+        <h2>Contact : {name}</h2>
+                    {this.props.name}
         <ul>
-            <li>Tel : +212 6 70 36 61 90</li>
-            <li>Email : Elmourabitmohammed00@gmail.com</li>
+            <li>Tel : {tel}</li>
+            <li>Email : {email}</li>
         </ul>
+        */}
+
       </div>
     )
   }
+}
+
+Contact.defaultProps = {
+    name : "Unknown",
+    tel : "+212 6 xx xx xx xx",
+    email : "xxxx@gmail.com"
+}
+
+Contact.protoTypes = {
+    name : PropTypes.string,
+    tel : PropTypes.string,
+    email :PropTypes.string
 }
 
 export default Contact;
