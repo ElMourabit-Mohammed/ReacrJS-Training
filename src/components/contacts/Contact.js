@@ -4,7 +4,7 @@ import './Contact.css'
 
 class Contact extends Component {
   render() {
-    const {name , tel , email} = this.props
+    const {name , tel , email} = this.props.data
     return (
       <div>
 
@@ -34,16 +34,26 @@ class Contact extends Component {
   }
 }
 
+// Contact.defaultProps = {
+//     name : "Unknown",
+//     tel : "+212 6 xx xx xx xx",
+//     email : "xxxx@gmail.com"
+// }
+
 Contact.defaultProps = {
     name : "Unknown",
     tel : "+212 6 xx xx xx xx",
     email : "xxxx@gmail.com"
 }
 
+// Contact.protoTypes = {
+//     name : PropTypes.string,
+//     tel : PropTypes.string,
+//     email :PropTypes.string
+// }
+
 Contact.protoTypes = {
-    name : PropTypes.string,
-    tel : PropTypes.string,
-    email :PropTypes.string
+    data : PropTypes.object.isRequired
 }
 
 export default Contact;
