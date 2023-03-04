@@ -4,6 +4,7 @@ import Contact from './components/contacts/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import'font-awesome/css/font-awesome.min.css'
 import Contacts from './components/contacts/Contacts';
+import { Provider } from './components/Context';
 
 function App() {
   // let name="El mourabit Mohammed";
@@ -27,9 +28,11 @@ return (
   <Contact/>
   */}
 
-  <Navbar title="Contact List"/>
-  <Contacts/>
-
+  <Provider>
+    <Navbar title="Contact List"/>
+    <Contacts/>
+  </Provider>
+  
 </div>
 );
 }

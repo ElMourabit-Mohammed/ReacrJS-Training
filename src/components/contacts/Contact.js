@@ -5,7 +5,7 @@ import './Contact.css'
 class Contact extends Component {
 
     state ={
-        showContactToggle : false
+        showContactToggle : true
     }
 
     showContact (message){
